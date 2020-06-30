@@ -16,4 +16,11 @@ app.use('/', (req, res)=>{
   res.render('index.html');
 });
 
+io.on('connection', socket =>{
+console.log(`Socket connectado: ${socket.id}`);
+socket.on('sendMessage', data =>{
+  console.log(data);
+})
+});
+
 server.listen(3000);
