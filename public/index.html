@@ -58,6 +58,8 @@
 
       renderMessage(messageObject);
       socket.emit("sendMessage", messageObject);
+      $('input[name=message]').val("");
+      
     };
   })
   </script>
