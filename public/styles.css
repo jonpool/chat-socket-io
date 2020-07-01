@@ -17,13 +17,13 @@ html, body {
 }
 
 input {
+  
   width: 600px;
   border: 1px solid #ddd;
   height: 50px;
   padding: 0 20px;
   font-size: 14px;
 }
-
 button {
   width: 600px;
   height: 50px;
@@ -34,6 +34,13 @@ button {
   font-weight: bold;
   color: #FFF;
   margin-top: 10px;
+}
+
+
+.logo{
+  margin-top: 200px;
+  padding-left: 650px;
+  
 }
 
 .messages {
