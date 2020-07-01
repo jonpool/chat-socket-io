@@ -49,11 +49,7 @@ button {
   margin: 20px 0;
   border: 1px solid #ddd;
   padding: 20px;
-}
-
-.div {
-  background-color: lightblue;
-  width: 110px;
-  height: 110px;
   overflow: auto;
 }
+
+
