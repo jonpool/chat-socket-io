@@ -3,8 +3,8 @@
 
 <head id="_ctl0_Head1"><meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Inforprize.com</title>
-        <meta name="keywords" content="Homepage, free homepage, create website, create free homepage, website, websites, make website, make free website, how to make homepage, how to make a homepage, blog, free blog, make a blog, make free blog, web design, web hotel, business website, business homepages, hobby website, family website, family homepage, pet website, pet homepage, homepage builder" />
-        <meta name="description" content="Fast and easy - the most popular online website builder in the world, with no ads and your own domain name. Try SimpleSite.com completely free now!" />
+        <meta name="keywords" content="Chat in real time project developed with NodeJS + Socket.io " />
+        <meta name="description" content="This project was develped by John CEO at Inforprize - Pleasure in tecnology." />
         <meta name="google" content="notranslate" />
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,6 +28,12 @@
   function renderMessage(message){
     $('.messages').append('<div class="message"><strong>'+ message.author +'</strong>: ' + message.message +'<div>');
   }
+
+  socket.on('previousMessages',function(messages){
+    for (message of messages){
+      renderMessage(message)
+    }
+  });
 
   socket.on('receivedMessage', function(message){
     renderMessage(message);
