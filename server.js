@@ -19,15 +19,14 @@ app.use('/', (req, res)=>{
 let messages = [];
 
 io.on('connection', socket =>{
-console.log(`Socket connectado: ${socket.id}`);
-socket.emit('previousMessages', messages);
-socket.on('sendMessage', data =>{
-  console.log(data);
-  messages.push(data);
+    console.log(`Socket connectado: ${socket.id}`);
+    socket.emit('previousMessages', messages);
+    socket.on('sendMessage', data =>{
+    messages.push(data);
 
-  //envia a mensagem recebida para todos clientes conectados na aplicacao
-  socket.broadcast.emit('receivedMessage', data);
-})
+      //envia a mensagem recebida para todos clientes conectados na aplicacao
+      socket.broadcast.emit('receivedMessage', data);
+    })
 });
 
 server.listen(3000);
